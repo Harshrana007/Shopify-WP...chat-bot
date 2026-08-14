@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peptide Research Assistant</title>
+    <meta name="description" content="Research-grounded answers for peptide science, with citations, evidence levels, and transparent uncertainty handling." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">R</span>
+          <span>Peptide Research Assistant</span>
+        </div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#product">Product</a>
+          <a href="#chat-section">Assistant</a>
+          <a href="#library">Research Library</a>
+          <a href="#integrations">Integrations</a>
+          <a href="#admin">Admin</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-secondary" href="#library">Explore research</a>
+          <a class="btn btn-primary" href="#chat-section">Ask the assistant</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="kicker">Source-controlled research AI</span>
+            <h1>Research-grounded answers for peptide science.</h1>
+            <p class="hero-copy">A controlled research assistant that answers from curated peptide studies, distinguishes evidence level, cites supporting sources, and explicitly flags uncertainty instead of inventing certainty.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#chat-section">Ask the Research Assistant</a>
+              <a class="btn btn-secondary" href="#library">Explore the Research Library</a>
+            </div>
+            <div class="metric-row">
+              <div class="metric">
+                <strong>6</strong>
+                <span>Evidence tiers</span>
+              </div>
+              <div class="metric">
+                <strong>6+</strong>
+                <span>Sources indexed</span>
+              </div>
+              <div class="metric">
+                <strong>100%</strong>
+                <span>Source-based answers</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="chat-mini" aria-label="Assistant preview">
+              <div class="chat-bubble user">What does the current literature say about BPC-157?</div>
+              <div class="chat-bubble assistant">The available evidence is limited and mixed. The library includes preclinical and secondary commentary, but not a definitive human clinical consensus.</div>
+              <div class="evidence-badge">Evidence: Limited / mixed evidence</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="product">
+        <div class="container">
+          <div class="section-header">
+            <h2>Built for research credibility.</h2>
+            <p class="section-subtitle">This product is designed to behave like a research literature assistant, not a generic chatbot. It distinguishes between published evidence, mechanisms, anecdotes, and unsupported claims.</p>
+          </div>
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon-box">01</div>
+              <h3>Source-controlled answers</h3>
+              <p>Every substantive answer draws from a curated knowledge library with visible metadata and citations.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">02</div>
+              <h3>Evidence-aware reasoning</h3>
+              <p>Human clinical evidence, preclinical research, mechanistic studies, and community anecdotes are never treated as equivalent.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">03</div>
+              <h3>Uncertainty by design</h3>
+              <p>When the evidence is weak or absent, the assistant says so explicitly instead of inventing a confident answer.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="product">
+        <div class="container">
+          <div class="section-header">
+            <h2>Peptide evidence profiles, not generic AI answers.</h2>
+            <p class="section-subtitle">The assistant is designed to answer like a research literature tool: explain what the evidence says, what it means, and what remains uncertain.</p>
+          </div>
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon-box">A</div>
+              <h3>Research summaries</h3>
+              <p>Users can ask about peptide evidence, study quality, limitations, and what the literature actually supports.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">B</div>
+              <h3>Evidence grading</h3>
+              <p>Every response is framed around evidence level, sample scope, and the difference between preclinical and human findings.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">C</div>
+              <h3>Source transparency</h3>
+              <p>Study metadata, references, and limitations remain visible so the product feels like the research layer, not a black-box chatbot.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="chat-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Ask the research assistant</h2>
+            <p class="section-subtitle">The assistant is configured to answer from the research library, cite sources, and safely refuse individualized medical recommendations.</p>
+          </div>
+          <div class="chat-shell" aria-live="polite">
+            <div class="chat-header">
+              <div class="title"><span class="status-dot" aria-hidden="true"></span>Peptide Research Assistant</div>
+              <div class="chip success" id="assistantMode">Research mode active</div>
+            </div>
+            <div class="chat-body" id="chatBody">
+              <div class="message-row assistant">
+                <div class="message assistant">
+                  <p>Welcome. I answer from a controlled research library and cite the evidence when available. I can summarize the literature, explain uncertainty, and flag when the evidence is insufficient.</p>
+                  <div class="message-meta">
+                    <span class="chip">Evidence-aware</span>
+                    <span>Source-backed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-footer">
+              <div class="chat-suggestions" id="suggestions"></div>
+              <form class="chat-form" id="chatForm">
+                <input id="chatInput" type="text" placeholder="Ask about peptide research, evidence, or protocols..." aria-label="Ask the research assistant" />
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="library">
+        <div class="container">
+          <div class="section-header">
+            <h2>Research library</h2>
+            <p class="section-subtitle">Search within a controlled set of peptide research records and review the evidence level, publication metadata, and study summary.</p>
+          </div>
+          <div class="library-grid">
+            <aside class="filters" aria-label="Research filters">
+              <h3>Filters</h3>
+              <div class="field">
+                <label for="libraryQuery">Search</label>
+                <input id="libraryQuery" type="search" placeholder="Search research..." />
+              </div>
+              <div class="field">
+                <label for="libraryPeptide">Peptide / Topic</label>
+                <input id="libraryPeptide" type="text" placeholder="BPC-157, GLP-1..." />
+              </div>
+              <div class="field">
+                <label for="libraryEvidence">Evidence level</label>
+                <select id="libraryEvidence">
+                  <option value="">All</option>
+                  <option value="Tier 1">Tier 1</option>
+                  <option value="Tier 2">Tier 2</option>
+                  <option value="Tier 3">Tier 3</option>
+                  <option value="Tier 4">Tier 4</option>
+                  <option value="Tier 5">Tier 5</option>
+                  <option value="Tier 6">Tier 6</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="libraryType">Study type</label>
+                <select id="libraryType">
+                  <option value="">All</option>
+                  <option value="Human study">Human study</option>
+                  <option value="Clinical trial">Clinical trial</option>
+                  <option value="Preclinical">Preclinical</option>
+                  <option value="Mechanistic">Mechanistic</option>
+                  <option value="Secondary commentary">Secondary commentary</option>
+                  <option value="Anecdotal">Anecdotal</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-primary" id="applyLibraryFilters">Apply filters</button>
+            </aside>
+            <section id="sourceList" class="sources-list" aria-live="polite"></section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="integrations">
+        <div class="container">
+          <div class="section-header">
+            <h2>Three distribution surfaces. One intelligence layer.</h2>
+            <p class="section-subtitle">The standalone site, Shopify app, and WordPress plugin all connect to the same research backend and configuration model.</p>
+          </div>
+          <div class="integration-grid">
+            <article class="integration-card">
+              <div class="logo">Web</div>
+              <h3>Standalone website</h3>
+              <p>Embedded chatbot, research library, and product education for direct traffic and enterprise landing pages.</p>
+              <a class="btn btn-secondary" href="/">Open website demo</a>
+            </article>
+            <article class="integration-card">
+              <div class="logo">Shopify</div>
+              <h3>Shopify storefront</h3>
+              <p>Theme app extension, merchant settings, and storefront installation path built around current Shopify app patterns.</p>
+              <a class="btn btn-secondary" href="/shopify.html">Open Shopify demo</a>
+            </article>
+            <article class="integration-card">
+              <div class="logo">WP</div>
+              <h3>WordPress plugin</h3>
+              <p>Native settings, Gutenberg-ready integration, shortcode support, secure API configuration, and privacy-aware behavior.</p>
+              <a class="btn btn-secondary" href="/wordpress.html">Open WordPress demo</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="admin">
+        <div class="container">
+          <div class="section-header">
+            <h2>Admin and analytics</h2>
+            <p class="section-subtitle">A lightweight control layer demonstrates how a business can manage research sources, AI settings, safety rules, and platform integrations.</p>
+          </div>
+          <div class="admin-grid">
+            <div class="admin-panel card">
+              <h3>Knowledge metrics</h3>
+              <div class="metric-grid" id="statsGrid"></div>
+            </div>
+            <div class="admin-panel card">
+              <h3>AI configuration</h3>
+              <div class="field">
+                <label for="assistantNameField">Assistant name</label>
+                <input id="assistantNameField" type="text" value="Peptide Research Assistant" />
+              </div>
+              <div class="field">
+                <label for="welcomeMessageField">Welcome message</label>
+                <input id="welcomeMessageField" type="text" value="I answer from a controlled research library and cite the evidence." />
+              </div>
+              <div class="field">
+                <label for="thresholdField">Evidence threshold</label>
+                <select id="thresholdField">
+                  <option value="High">High</option>
+                  <option value="Moderate" selected>Moderate</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="brand" style="color: white; margin-bottom: 12px;">
+              <span class="brand-mark">R</span>
+              <span>Peptide Research Assistant</span>
+            </div>
+            <p>Research education and evidence summaries for peptide science, designed for professional, transparent, and source-aware discussion.</p>
+          </div>
+          <div>
+            <h4>Product</h4>
+            <p>Research library</p>
+            <p>Evidence hierarchy</p>
+            <p>Admin controls</p>
+          </div>
+          <div>
+            <h4>Integrations</h4>
+            <p>Website</p>
+            <p>Shopify</p>
+            <p>WordPress</p>
+          </div>
+        </div>
+        <div class="disclaimer">Educational use only. This product does not provide diagnosis, treatment, or individualized medical advice and should not be treated as a substitute for professional medical care.</div>
+      </div>
+    </footer>
+
+    <div class="floating-chat">
+      <button class="chat-toggle" id="chatToggle" aria-label="Open chat">✦</button>
+      <div class="floating-chat-panel" id="floatingChatPanel">
+        <div class="chat-shell" style="border-radius: 20px;">
+          <div class="chat-header">
+            <div class="title"><span class="status-dot" aria-hidden="true"></span>Assistant</div>
+            <button type="button" class="btn btn-ghost" id="closeFloatingChat">Close</button>
+          </div>
+          <div class="chat-body" id="floatingChatBody"></div>
+          <div class="chat-footer">
+            <div class="chat-suggestions" id="floatingSuggestions"></div>
+            <form class="chat-form" id="floatingChatForm">
+              <input id="floatingChatInput" type="text" aria-label="Ask quick question" placeholder="Ask a research question..." />
+              <button type="submit">Go</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="sourceModal" aria-modal="true" role="dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="sourceModalTitle">Source</h3>
+          <button type="button" class="btn btn-ghost" id="closeSourceModal">Close</button>
+        </div>
+        <div class="modal-body" id="sourceModalBody"></div>
+      </div>
+    </div>
+
+    <div id="researchPopupHost" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

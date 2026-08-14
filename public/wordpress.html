@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordPress Plugin Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand"><span class="brand-mark">R</span><span>Research AI</span></div>
+        <nav class="nav-links"><a href="/">Website</a><a href="/shopify.html">Shopify</a><a href="/admin.html">Admin</a></nav>
+        <div class="nav-actions"><a class="btn btn-primary" href="/">Launch demo</a></div>
+      </div>
+    </header>
+    <main class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>WordPress plugin demo</h2>
+          <p class="section-subtitle">A lightweight WordPress integration with settings, secure API configuration, floating widget behavior, shortcode support, and privacy-oriented defaults.</p>
+        </div>
+
+        <div class="admin-grid">
+          <div class="card">
+            <h3>Plugin settings</h3>
+            <div class="field">
+              <label>Plugin status</label>
+              <div class="inline-list"><span class="chip success">Active</span></div>
+            </div>
+            <div class="field">
+              <label>API endpoint</label>
+              <input type="text" value="https://api.example.com/chat" />
+            </div>
+            <div class="field">
+              <label>Shortcode</label>
+              <input type="text" value="[research_ai_chat]" />
+            </div>
+            <div class="field">
+              <label>Enable widget</label>
+              <select><option>Enabled</option><option>Disabled</option></select>
+            </div>
+            <button type="button" class="btn btn-primary">Save settings</button>
+          </div>
+          <div class="card">
+            <h3>Gutenberg + shortcode preview</h3>
+            <div class="chat-mini">
+              <div class="chat-bubble user">What is the evidence level for this peptide?</div>
+              <div class="chat-bubble assistant">The current library includes mixed preclinical and secondary evidence, so I would describe the answer as limited / mixed evidence.</div>
+              <div class="evidence-badge">Evidence: Limited / mixed evidence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

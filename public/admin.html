@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Overview</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand"><span class="brand-mark">R</span><span>Platform Admin</span></div>
+        <nav class="nav-links"><a href="/">Website</a><a href="/shopify.html">Shopify</a><a href="/wordpress.html">WordPress</a></nav>
+        <div class="nav-actions"><a class="btn btn-primary" href="/">Overview</a></div>
+      </div>
+    </header>
+    <main class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Central admin dashboard</h2>
+          <p class="section-subtitle">Review research sources, AI configuration, and multi-platform connectivity from a single control layer.</p>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric-box"><span>Total sources</span><strong>6</strong></div>
+          <div class="metric-box"><span>Human studies</span><strong>2</strong></div>
+          <div class="metric-box"><span>Preclinical</span><strong>2</strong></div>
+          <div class="metric-box"><span>Abstentions</span><strong>76</strong></div>
+        </div>
+
+        <div class="admin-grid">
+          <div class="card">
+            <h3>Research sources</h3>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr><th>Title</th><th>Peptide</th><th>Evidence</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Demonstration BPC-157 study</td><td>BPC-157</td><td>Tier 3</td><td><span class="chip success">Active</span></td></tr>
+                  <tr><td>Human clinical evidence for GLP-1</td><td>GLP-1</td><td>Tier 2</td><td><span class="chip success">Active</span></td></tr>
+                  <tr><td>Thymosin Alpha-1 clinical report</td><td>Thymosin Alpha-1</td><td>Tier 1</td><td><span class="chip success">Active</span></td></tr>
+                  <tr><td>Community anecdote archive</td><td>General use</td><td>Tier 6</td><td><span class="chip danger">Archived</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>AI configuration</h3>
+            <div class="field"><label>Assistant name</label><input type="text" value="Peptide Research Assistant" /></div>
+            <div class="field"><label>Evidence threshold</label><select><option>Moderate</option><option>High</option><option>Low</option></select></div>
+            <div class="field"><label>Source visibility</label><select><option>Public citation-ready</option><option>Internal-only</option></select></div>
+            <div class="field"><label>Safety rules</label><input type="text" value="No individualized dosing; cite evidence; no unsupported claims" /></div>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
