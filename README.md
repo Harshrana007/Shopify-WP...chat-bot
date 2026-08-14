@@ -1,31 +1,73 @@
 # Peptide Research Assistant
 
-A research-grounded AI assistant demo focused on peptide research, evidence-based answers, citations, and safe handling of uncertainty.
+A research-grounded product demo for peptide education, source transparency, and evidence-aware Q&A. The system is designed to behave like a research assistant rather than a generic chatbot: it distinguishes between confirmed evidence, mixed evidence, and unsupported claims, and it stays inside the peptide-research domain.
 
-## Product concept
+## What this project does
 
-This project demonstrates one central AI and research layer that powers three surfaces:
+This demo shows a central research layer that can power multiple front-end surfaces:
 
-1. Standalone website
-2. Shopify storefront app demo
-3. WordPress plugin demo
+- a standalone website
+- a Shopify storefront concept
+- a WordPress integration concept
+- an admin dashboard for research stats and configuration
 
-The assistant behaves like a research literature assistant rather than a generic chatbot. It uses a controlled source library, anchors answers to evidence, shows uncertainty, and refuses to fabricate unsupported claims.
+It is built around a curated peptide research library and a simple intent-routing engine so the assistant can answer in a controlled, transparent way.
 
-## Quick start
+## Core behaviors
+
+- research-first answers with citations
+- explicit uncertainty handling instead of invented certainty
+- domain guardrails for off-topic requests
+- refusal of individualized medical dosing or treatment advice
+- evidence-aware summaries for human studies, comparisons, and limitations
+
+## Local setup
 
 1. Install dependencies:
+   ```bash
    npm install
+   ```
 2. Start the app:
+   ```bash
    npm start
-3. Open:
+   ```
+3. Open the demo in a browser:
+   ```text
    http://localhost:3000
+   ```
 
-## Environment variables
+## Verify it is working
 
-Copy .env.example to .env and adjust values as needed.
+Run the tests:
 
-## API
+```bash
+npm test
+```
+
+The current test suite validates the core conversation logic, including greeting handling, medical boundaries, evidence limitations, and off-topic domain guardrails. The project is currently passing all 5 core tests.
+
+## Project structure
+
+```text
+.
+├── public/
+│   ├── app.js
+│   ├── index.html
+│   ├── shopify.html
+│   ├── wordpress.html
+│   └── styles.css
+├── src/
+│   ├── researchData.js
+│   └── researchEngine.js
+├── tests/
+│   └── researchEngine.test.js
+├── server.js
+├── package.json
+├── README.md
+└── .env.example
+```
+
+## API endpoints
 
 - GET /api/health
 - GET /api/configuration
@@ -34,47 +76,33 @@ Copy .env.example to .env and adjust values as needed.
 - GET /api/admin/stats
 - POST /api/chat
 
-## Research handling
+## Research model
 
-The demo uses a curated source library in src/researchData.js and a small retrieval engine in src/researchEngine.js.
+The demo uses a curated library in [src/researchData.js](src/researchData.js) and a routing engine in [src/researchEngine.js](src/researchEngine.js). The engine classifies user intent before picking a response, which keeps greetings, comparisons, limitations, and off-topic questions separate instead of sending everything through one generic research path.
 
-Key behaviors:
+## Safety and limitations
 
-- citations are attached to substantive answers
-- evidence thresholds are enforced
-- individualized medical advice is refused safely
-- unsupported claims trigger an insufficient-evidence message
-- conflicting or mixed evidence is acknowledged instead of hidden
+This project is a demo and not a medical decision support system.
 
-## Shopify notes
+Important limits:
 
-This is a concept demo for a modern Shopify app architecture. It reflects current patterns such as app configuration, theme app extension install flow, and storefront embed concepts.
+- it is intentionally built around a small curated data set
+- it does not provide individualized medical treatment advice
+- it should not be treated as a substitute for professional medical judgment
+- any production deployment should add stronger auth, rate limiting, and source review controls
 
-## WordPress notes
+## Demo notes
 
-This demo reflects native plugin design principles: capability checks, safe API handling, escaping, sanitization, configuration settings, shortcode support, and a secure backend pattern.
+### Shopify
+This concept reflects modern storefront integration patterns, including merchant configuration and embedded assistant experiences.
 
-## Security review
+### WordPress
+This concept reflects plugin-style integration patterns such as settings, secure API configuration, and content-safe embedding.
 
-This is a demo environment. Production deployment should add:
+## Recommended next steps
 
-- authenticated merchant/admin access
-- stronger rate limiting
-- tenant separation
-- real API key management
-- logging and abuse protection
-- secure storage for private configuration
-
-## Demo limitations
-
-- The research library is intentionally small and curated for demonstration.
-- The app is not a clinical decision support system.
-- Scientific facts should be independently verified before production use.
-
-## Production recommendations
-
-- Replace sample papers with a verified ingestion pipeline
-- Add database-backed storage and indexing
-- Add admin review, moderation, and source verification flows
-- Add real Shopify and WordPress integration security and auth
-- Expand multi-tenant configuration and analytics
+- add richer source ingestion and indexing
+- improve conversation memory for follow-up questions
+- expand the comparison and human-study UI rendering
+- add stronger admin controls and production security
+- connect the curated layer to a real retrieval or RAG stack when ready

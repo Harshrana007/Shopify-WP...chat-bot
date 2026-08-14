@@ -24,6 +24,15 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+p, h1, h2, h3, h4, h5, h6, li, span, button, input, select, textarea, a {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 a { color: var(--primary); text-decoration: none; }
@@ -267,6 +276,7 @@ h1 {
   border-radius: 22px;
   padding: 22px;
   box-shadow: 0 8px 26px rgba(16, 29, 44, 0.04);
+  min-width: 0;
 }
 
 .card h3 {
@@ -335,11 +345,14 @@ h1 {
 .message-row.user { justify-content: flex-end; }
 
 .message {
-  max-width: 80%;
+  max-width: min(80%, 760px);
+  min-width: 0;
   padding: 15px 16px;
   border-radius: 18px;
   border: 1px solid var(--line);
   background: white;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .message.user {
@@ -370,6 +383,7 @@ h1 {
   border: 1px solid rgba(17, 60, 92, 0.08);
   border-radius: 12px;
   padding: 10px 12px;
+  min-width: 0;
 }
 
 .research-section h4 {
@@ -540,6 +554,13 @@ h1 {
   display: flex;
   justify-content: space-between;
   gap: 16px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.source-card > div {
+  min-width: 0;
+  flex: 1 1 260px;
 }
 
 .source-card .meta { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -887,16 +908,25 @@ h1 {
   .section-header { display: block; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .metric-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .nav { flex-wrap: wrap; gap: 12px; }
+  .nav-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
 }
 
 @media (max-width: 640px) {
   .nav-links { display: none; }
   .hero { padding-top: 42px; }
+  .hero-actions, .nav-actions { flex-direction: column; align-items: stretch; }
   .chat-form { flex-direction: column; align-items: stretch; }
   .chat-form button { width: 100%; }
   .message { max-width: 92%; }
-  .steps, .metric-grid { grid-template-columns: 1fr; }
+  .steps, .metric-grid, .evidence-grid { grid-template-columns: 1fr; }
   .source-card { flex-direction: column; }
+  .chat-shell { border-radius: 20px; }
+  .chat-header { padding: 14px 16px; }
+  .chat-body { padding: 14px; }
+  .chat-footer { padding: 14px; }
+  .floating-chat { right: 14px; bottom: 14px; }
+  .floating-chat-panel { right: 12px; bottom: 86px; width: min(360px, calc(100% - 20px)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
